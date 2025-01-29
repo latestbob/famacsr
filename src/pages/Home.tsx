@@ -1,17 +1,14 @@
 import React from "react";
-import { useState } from "react";
 
 
-import { useNavigate, Link } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
 import { useRating } from "../context/ratings";
 
 import { Bounce, toast } from 'react-toastify';
 
 const Home = (): JSX.Element => {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [errorMessage, setErrorMessage] = useState<string>("");
+ 
 
   const navigate = useNavigate();
 
@@ -25,14 +22,6 @@ const Home = (): JSX.Element => {
     // };
 
 
-
-  function handleEmailChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setEmail(e.target.value);
-  }
-
-  function handlePasswordChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setPassword(e.target.value);
-  }
 
   const handleRating = (rate: number) => {
     setRatings((prevRatings) => ({

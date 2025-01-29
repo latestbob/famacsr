@@ -1,28 +1,15 @@
 import React from "react";
-import { useState } from "react";
 
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import { useRating } from "../context/ratings";
 import { Bounce, toast } from "react-toastify";
 import { createCSR } from "../service/csrService";
 
 const Last = (): JSX.Element => {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [errorMessage, setErrorMessage] = useState<string>("");
+  
 
   const navigate = useNavigate();
 
-  const [cleanrating, setCleanRating] = useState<number>(0);
-
-  function handleEmailChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setEmail(e.target.value);
-  }
-
-  function handlePasswordChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setPassword(e.target.value);
-  }
   const { ratings, setRatings } = useRating();
  
   const handleRating = (rate: string) => {
@@ -61,7 +48,7 @@ const Last = (): JSX.Element => {
 
 
   try {
-    const result = await createCSR(
+   await createCSR(
       ratings.staff,
       ratings.clean,
       ratings.satisfaction,

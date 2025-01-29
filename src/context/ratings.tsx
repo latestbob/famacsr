@@ -25,7 +25,7 @@ export const RatingContextProvider = function ({ children }: { children: ReactNo
         recommend: ''
     });
 
-    const navigate = useNavigate();
+ 
 
     const value = {
         ratings,
