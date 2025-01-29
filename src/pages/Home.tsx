@@ -97,7 +97,7 @@ const Home = (): JSX.Element => {
 
 
 
-                        <div className="flex justify-end mt-auto ">
+                        <div className="flex justify-end mt-5 md:mt-auto ">
 
                        
 

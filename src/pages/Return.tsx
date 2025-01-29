@@ -104,7 +104,7 @@ const Return = (): JSX.Element => {
 
 
 
-                        <div className="flex justify-between mt-auto ">
+                        <div className="flex justify-between mt-5 md:mt-auto">
 
                         <button
                                 className="bg-cyan-700 text-white font-bold text-sm md:text-base py-2 px-10 md:px-16 rounded hover:bg-[#f36e25] cursor-pointer"

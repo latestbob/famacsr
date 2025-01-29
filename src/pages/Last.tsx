@@ -39,6 +39,15 @@ const Last = (): JSX.Element => {
     //  call the function
     handleSubmit()
 
+    setRatings((prevRatings) => ({
+      ...prevRatings,
+      staff:0,
+      clean:0,
+      satisfaction:'',
+      return:'',
+      recommend:''
+  }));
+
     
    }
  };
@@ -157,7 +166,7 @@ const Last = (): JSX.Element => {
 
 
 
-                        <div className="flex justify-between mt-auto ">
+                        <div className="flex justify-between mt-5 md:mt-auto">
 
                         <button
                                 className="bg-cyan-700 text-white font-bold py-2 text-sm md:text-base px-10 md:px-16 rounded hover:bg-[#f36e25] cursor-pointer"
