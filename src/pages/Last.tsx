@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useRating } from "../context/ratings";
 import { Bounce, toast } from "react-toastify";
+import { createCSR } from "../service/csrService";
 
 const Last = (): JSX.Element => {
   const [email, setEmail] = useState<string>("");
@@ -49,10 +50,62 @@ const Last = (): JSX.Element => {
      });
    } else {
     //  call the function
+    handleSubmit()
 
-    alert("working");
+    
    }
  };
+
+ async function handleSubmit() {
+ 
+
+
+  try {
+    const result = await createCSR(
+      ratings.staff,
+      ratings.clean,
+      ratings.satisfaction,
+      ratings.recommend,
+      ratings.return
+    );
+
+    toast.success("Thank you for your feedback! We appreciate your time and effort. 😊", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+    //    alert("Reset Password Link has been shared to your mail");
+    
+
+    
+      navigate("/");
+    
+   
+   
+  } catch (err: any) {
+    //setErroMessage(err.message);
+    
+    toast.error(`${err.message}`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+  }
+}
+
+
 
 
   return (
