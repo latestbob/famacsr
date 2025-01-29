@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import routes from './routes';
-import { Routes, Route, useLocation , Navigate} from 'react-router-dom';
+import { Routes, Route, useLocation} from 'react-router-dom';
 
 
 const AppRoute = ():JSX.Element =>{
 
 
 
-    const [pageTile, setPageTitle] = useState("");
+    
     const location = useLocation();
    
 
@@ -33,7 +33,7 @@ const AppRoute = ():JSX.Element =>{
 
 
             <Routes>
-                {routes.map(({ id, path, component: Component, auth }) => {
+                {routes.map(({ id, path, component: Component }) => {
                     // const isAuthenticated = currentUser !== null;
                     
                     
